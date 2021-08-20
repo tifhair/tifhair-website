@@ -109,7 +109,7 @@ function showCoiffeursGeoJSON(data) {
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}', {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'}).addTo(map);
 
 var coiffeurs_json; 
-getJSON("/coiffeurs_blague", function(err, data) {
+getJSON("/coiffeurs.json", function(err, data) {
     if (err !== null) {
         console.log('Something went wrong: ' + err);
     } else {
