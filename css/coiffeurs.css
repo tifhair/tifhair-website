@@ -1,31 +1,86 @@
 html {
     font-family: 'Fira Sans', sans-serif;
+    scroll-behavior: smooth;
+    padding-bottom: 200px;
 }
 
-.container > * {
-    border: 1px solid green; 
+body {
+    padding-top:50px;
 }
+label {
+    margin: 5px;
+}
+
+select {
+    margin: 5px;
+}
+
+
+/*
+.container > * {
+    border: 1px solid green;
+}
+
+section > * {
+    border: 1px solid red;
+}
+*/
 
 div.container {
     width: 80vw;
-    height: 80vh;
+    margin: 10px auto;
+}
+section#globalmap {
     display: grid;
     margin: 0 auto;
     grid-auto-columns: 2fr 1fr;
-    grid-template-rows: 50px 30px calc(100vh - 30px);
+    grid-template-rows: 100px 30px calc(100vh - 30px);
+    grid-gap: 1rem;
+}
+
+section#globalmap h2 {
+    grid-column: span 2;
+}
+
+section#globalmap div.filters {
+    grid-column: span 2;
+}
+
+section#dmap {
+    display: grid;
+    margin: 0 auto;
+    grid-auto-columns: 1fr;
+    grid-template-rows: 100px calc(100vh - 30px);
     grid-gap: 1rem;
 }
 
 h1 {
-    grid-column: span 2;
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-input[type=text] {
+h2 {
+    margin: 20px;
+    margin-top: 70px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+h2:before {
+    content: "✂️ ";
+}
+
+h3 {
+    margin: 10px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+input[type=search] {
     margin: 5px;
 }
+
 
 #mapid {
     background: #fee;
@@ -37,18 +92,87 @@ input[type=text] {
     padding: 1rem;
 }
 
-label {
-    margin: 5px;
-}
-
-select {
-    margin: 5px;
-}
-
-div.filters {
-    grid-column: span 2;
-}
-
-ul#listecoiffeurs {
+aside{
     overflow: scroll;
+}
+
+aside p {
+    margin: 10px;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    text-decoration: none;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 5px;
+    display: inline-block;
+}
+
+.legend {
+    line-height: 18px;
+    color: #555;
+}
+.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 16px/18px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+div.about {
+    column-count:  2;
+}
+
+div.about p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+div.about code {
+    background-color: #eeeeee;
+}
+div.about ul {
+    margin-left: 20px;
+}
+div.about ul li {
+    list-style: square;
+    font-size: 1.2rem;
+}
+
+div.palmares {
+    column-count:  2;
+}
+
+div.palmares p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+div.palmares code {
+    background-color: #eeeeee;
+}
+div.palmares ul {
+    margin-left: 20px;
+}
+div.palmares ul li {
+    list-style: square;
+    font-size: 1.2rem;
 }

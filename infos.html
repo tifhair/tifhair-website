@@ -1,1 +1,61 @@
-<Sur>https://www.data.gouv.fr/en/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/</Sur><telecharger>StockEtablissement_utf8.zip et StockUniteLegale_utf8.zip</telecharger><lancer>sirene.rb pour créer la DB</lancer><use>coords.rb to get coordinates (first with :ban_data_gouv_fr then complete with google & api key</use>
+<div class="about">
+  <h3>
+    Qu'est-ce donc?
+  </h3>
+  <p>
+    Ce site répertorie les établissements de coiffure (indiqués par le code  <a href="https://www.insee.fr/fr/metadonnees/nafr2/sousClasse/96.02A">Nomenclature d'Activité Française 96.02A</a> dont les noms contiennent <strong>'coif'</strong>,  <strong>'tif'</strong>, ou encore  <strong>'épi'</strong> dans le but de détecter des jeux de mots ravissants. 
+  </p>
+  <h3>
+    D'où viennent les données?
+  </h3>
+  <p>
+    La source principale des données est l' <a href="https://www.insee.fr">INSEE (Institut national de la statistique et des études économiques)</a> qui gère également le répertoire système national d'identification et du répertoire des entreprises et de leurs établissements (SIRENE) comprenant les identifiants système d'identification du répertoire des entreprises (SIREN) des entreprises et SIRET de leurs différents établissements. 
+  </p>
+  <p>
+    La base complète de tous les établissements est <a href="https://www.data.gouv.fr/en/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/">disponible ici</a>. Les deux bases utilisées sont <a href="https://files.data.gouv.fr/insee-sirene/StockEtablissement_utf8.zip">StockEtablissement_utf8.zip</a> et <a href="https://files.data.gouv.fr/insee-sirene/StockUniteLegale_utf8.zip">StockUniteLegale_utf8.zip</a>. La première base contient l'intégralité des entreprises et établissements. Toutefois certains noms d'établissements n'y apparaissent pas et la deuxième base est nécessaire pour en trouver des informations plus récentes.
+  </p>
+  <h3>
+    Méthodologie
+  </h3>
+  <p>
+    Pour la sélection des noms d'établissement depuis la base INSEE, le seul critère est que le nom contiennent une de ces chaines de caractère: <code>hair</code>, <code>tif</code>, <code>epi</code>, <code>mech</code>. D'autres mots relatifs à la coiffure sont parfois utilisés pour des jeux de mots, par exemple <code>coiff</code>. Un <a href="http://www.coiff-emoi-tremblay.com/">salon de Seine-Saint-Denis</a>s'appelle par exemple "Coiff'Emoi". Toutefois, un très grand nombre de coiffeurs ont cette chaine de caractère dans leur nom, sans jeu de mot particulier.Un certain nombre de salon avec "hair" dans le nom ne contiennent pas de jeu de mot, tel que "Hair City" à BAGNEUX (92220).
+  </p>
+  <h3>
+    Reconstruire le jeu de données de ce site
+  </h3>
+  <p>
+    Une fois les bases téléchargées et décompressées, le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/sirene.rb">sirene.rb</a></code> pour construire le fichier<code>coiffeurs.sqlite</code> Ce script filtre les entrées du fichier <code>/tmp/StockEtablissement_utf8.csv</code>pour en extraire les établissements de coiffure, et d'autres informations concernant leur nom et addresse.
+  </p>
+  <p>
+    Pour obtenir les coordonnées latitude/longitude à partir de l'adresse, il faut ensuite utiliser un service de geocoding. J'utilise ici la librairie<a href="https://github.com/alexreisner/geocoder"> Ruby Geocoder</a> qui permet d'accéder à la fois aux API de  <a href="https://geo.api.gouv.fr/adresse">l'etalab</a> ainsi qu'aux API de <a href="https://developers.google.com/maps/documentation/geocoding/overview"> Google</a> qui, elles, necessitent une clé API.
+  </p>
+  <p>
+    Le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/coords.rb">coords.rb</a></code> permet d'utiliser ces APIs. Lancer d'abord  <code>ruby coords.rb</code> pour mettre à jour le plus d'adresse avec l'API etalab, puis (apres avoir mis à jour le fichier <code>.api_key  </code> avec votre clé API, lancer <code>ruby coords.rb google</code> pour obtenir le coordonnées des adresses qui n'ont pas pu être résolues avec l'etalab.
+  </p>
+  <p>
+    Pour des soucis de performance, la totalité de la base de données est ensuite exportée au format geojson pour être utilisé par les cartes Leaflets ci-dessus. Le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/statify.rb">statify.rb</a></code> réalise les transformations nécessaires pour construire l'intégralité du site <a href="https://tif.hair">tif.hair</a> dans un répertoire de destination en lançant <code> ruby statify.rb src <destination></code>
+  </p>
+  <h3>
+    Licences
+  </h3>
+  <ul>
+    <li>
+      <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Licence ouverte etalab</a>
+    </li>
+    <li>
+      <a href="https://github.com/alexreisner/geocoder/blob/master/LICENSE">Ruby Geocoder MIT License</a>
+    </li>
+    <li>
+      <a href="https://www.insee.fr/fr/information/2381863">Conditions utilisation données INSEE</a>
+    </li>
+    <li>
+      <a href="https://github.com/Leaflet/Leaflet/blob/master/LICENSE">Leaflet License</a>
+    </li>
+    <li>
+      <a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/MIT-LICENCE.txt">MarkerCluster MIT License</a>
+    </li>
+    <li>
+      <a href="https://github.com/jgthms/minireset.css/blob/master/LICENSE">MiniReset MIT License</a>
+    </li>
+  </ul>
+</div>
