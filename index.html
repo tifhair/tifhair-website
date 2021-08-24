@@ -2,6 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Coiffeurs Blagueurs</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/pics/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,7 +21,7 @@
     <div class="container">
       <nav class="fixed-nav-bar">
         <div id="menu" class="menu">
-          <a class="sitename" href="fixed-navigation-bar.html">Fixed Nav Bar</a>
+          <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu"> Menu</a>
           <ul class="menu-items">
             <li>
               <a href="#globalmap">Carte globale</a>
@@ -343,8 +344,9 @@
             </select></label><label>Filter par Ville:<input class="filter" id="filter_ville" type="search" placeholder="Ville" /></label>
         </div>
         <div id="mapid"></div>
-        <aside>
+        <aside id="asideresults">
           <p id="resultcount"></p>
+          <button id="read_more" class="read_more">Afficher plus</button>
           <ul id="listecoiffeurs" title="Cliquez pour zoomer!"></ul>
         </aside>
       </section>
@@ -359,19 +361,19 @@
           <p>
             <ul>
               <li>
-                Il y a 46 salons actifs qui avec un dérivé de "caract'hair"
+                Il y a 46 salons actifs avec un nom dérivé de "caract'hair"
               </li>
               <li>
-                Il y a 60 salons actifs qui avec un dérivé de "Atmosp'hair"
+                Il y a 60 salons actifs avec un nom dérivé de "Atmosp'hair"
               </li>
               <li>
-                Il y a 85 salons actifs qui avec un dérivé de "Imagin'hair"
+                Il y a 85 salons actifs avec un nom dérivé de "Imagin'hair"
               </li>
               <li>
-                Il y a 63 salons actifs qui avec un dérivé de "Bulles d'hair"
+                Il y a 63 salons actifs avec un nom dérivé de "Bulles d'hair"
               </li>
               <li>
-                Il y a 46 salons actifs qui avec un dérivé de "caract'hair"
+                Il y a 46 salons actifs avec un nom dérivé de "caract'hair"
               </li>
             </ul>
           </p>
@@ -389,17 +391,6 @@
               </li>
               <li>
                 <a target="_blank" href="https://maps.google.com/?q=BUTT%27HAIR+FLY 45+RUE+DU+GENERAL+DE+GAULLE+SEREMANGE-ERZANGE">BUTT'HAIR FLY</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Certains salons semblent avoir tenté des jeux de mots, pas tout à fait heureux, ou avec le mauvais champs lexical:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ABCD+TIF LE+MAILLARD+ANCY">ABCD TIF</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ARTIST%27TIF 10+RUE+COLONEL+A+LEFEBVRE+CHAMPSECRET">ARTIST'TIF</a>
               </li>
             </ul>
           </p>
@@ -430,10 +421,131 @@
               <li>
                 <a target="_blank" href="https://maps.google.com/?q=ALT%27HAIR++%26+GO 42+BD+HERAULT+SAINT-BRIEUC">ALT'HAIR  & GO</a>
               </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=JENNY+PEIGNE+NI+CISEAUX 12+KERALET+FEREL">JENNY PEIGNE NI CISEAUX</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=COURT+TOUJOURS 24+PL+DU+DIX+HUIT+OCTOBRE+CHATEAUDUN">COURT TOUJOURS</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=BOUCLE+LA 5+RUE+PORTE+CHARTRAINE+DREUX">BOUCLE LA</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=PAUSE+COIFFEE 18+RUE+DU+FOUR+LA+CHAPELLE-DES-MARAIS">PAUSE COIFFEE</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=COUPE+DU+MONDE 17+RUE+GAMBETTA+VILLIERS-LE-BEL">COUPE DU MONDE</a>
+              </li>
             </ul>
           </p>
           <p>
-            Plusieurs salons ont des noms en rapport avec la région:
+            Certains tentent des blagues multi-lingues:
+            <ul>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=UPSTHAIRS 309+RTE+DE+GRENOBLE+LE+MONETIER-LES-BAINS">UPSTHAIRS</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=UNITED+HAIR+LINES ">UNITED HAIR LINES</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=F%27HAIR+PLAY 33+RUE+SAINTE+MARIE+SAINT-DENIS">F'HAIR PLAY</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=ROCKSTHAIR AV+JOSEPH+COMBIER+LIVRON-SUR-DROME">ROCKSTHAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=ROCK+HAIR+ROLL 5+RUE+LEON+BLUM+MARLES-LES-MINES">ROCK HAIR ROLL</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=BIO+TIFF+HOULE 4+RUE+DU+GRENIER+A+SEL+FECAMP">BIO TIFF HOULE</a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            Les fans de mathématiques pourront se rendre au choix chez:
+            <ul>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=TRIANGUL%27HAIR 19+RUE+GUILLAUME+TELL+DIJON">TRIANGUL'HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=LINE+ET+HAIR 83+BD+DESAIX+RIOM">LINE ET HAIR</a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            Tandis que les littéraires seront plus attirés par:
+            <ul>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=VOLT%27HAIR+COIFFURE ">VOLT'HAIR COIFFURE</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=APAULINE%27HAIR GR+GRANDE+RUE+DUN-LE-PALESTEL">APAULINE'HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=GRAMME+HAIR 12+RUE+GRAMME+PARIS+15">GRAMME HAIR</a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            Les informaticiens ne sont pas en reste avec
+            <ul>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=CYB+HAIR 9+RUE+MAJOR+MARTIN+LYON+1ER">CYB HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=CIB%27HAIR 9+RUE+CHARLES+LE+HIR+GUILERS">CIB'HAIR</a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            De nombreuses possibilités pour intégrer son nom dans celui de son salon:
+            <ul>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=AXELLE%27+HAIR LE+BOURG+CERISY-BELLE-ETOILE">AXELLE' HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=VAL%27HAIR%27IE 15+RTE+NATIONALE+SAINT-LAURENT-DE-CONDEL">VAL'HAIR'IE</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=JENNIF%27HAIR RTE+DE+TEILLE+SAINT-MARCEAU">JENNIF'HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=TIFFANY+COIFFURE 55+RUE+BEAUMONT+NICE">TIFFANY COIFFURE</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=HAIR%27V 21+ALL+PAUL+LAFARGUE+LES+PAVILLONS-SOUS-BOIS">HAIR'V</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=CL%27+HAIR 19+RLE+DES+GRANDS+JARDINS+LES+PONTS-DE-CE">CL' HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=EMMAGINA%27TIF 33+RUE+DU+MARECHAL+FOCH+BRIONNE">EMMAGINA'TIF</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=BERENG%27HAIR AV+DU+GENERAL+DE+GAULLE+PORT-EN-BESSIN-HUPPAIN">BERENG'HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=SEV+HAIR%27IN 12+RUE+DE+METZ+AMNEVILLE">SEV HAIR'IN</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=FRED%27HAIR%27IC 7+RUE+RENE+MASSON+BRACIEUX">FRED'HAIR'IC</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=ALB%27HAIR+COIFFURE+A+DOMICILE 4+RUE+DES+VIOLETTES+ORTAFFA">ALB'HAIR COIFFURE A DOMICILE</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=MYLEN+HAIR 7+PL+DE+L+EGLISE+JOB">MYLEN HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=J%27HAIR-AIME 115+RUE+PIERRE+BROSSOLETTE+ESQUERDES">J'HAIR-AIME</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=HAIR%27ONE 22+PL+DES+LICES+VANNES">HAIR'ONE</a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            Plusieurs salons ont un nom en rapport avec la région:
             <ul>
               <li>
                 <a target="_blank" href="https://maps.google.com/?q=CORS%27HAIR 67+RUE+VILLE+PEPIN+SAINT-MALO">CORS'HAIR</a> à Saint-Malo
@@ -458,10 +570,36 @@
             </ul>
           </p>
           <p>
+            Ces salons n'hésitent pas à chercher dans les références 'Pop':
+            <ul>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=ABRARACOUR+%27TIFS CHAUFFOUR+SAINT-YBARD">ABRARACOUR 'TIFS</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=TIFS+ET+TONDU 28+RUE+D+ALSACE+VILLEURBANNE">TIFS ET TONDU</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=SPEED%27HAIR+MAN 4+RUE+LAMARTINE+AMIENS">SPEED'HAIR MAN</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=PRINCE+DE+BEL+HAIR 28+RUE+DE+LA+PREVOTE+PERENCHIES">PRINCE DE BEL HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=PARTOUTA%27TIF 20+RUE+DES+BATAILLES+LONGUES+MIOS">PARTOUTA'TIF</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=GIJHAIR 12+RUE+DU+COUVENT+HAGUENAU">GIJHAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=FACELOOK 20+RUE+DU+GENERAL+BIGEARD+LE+TAMPON">FACELOOK</a>
+              </li>
+            </ul>
+          </p>
+          <p>
             Une séléction de noms très originaux:
             <ul>
               <li>
-                <a target="_blank" href="https://maps.google.com/?q=LA+CHAMBRE+A+HAIR 2+RUE+GAUTTE+SAINT-GILLES-CROIX-DE-VIE">LA CHAMBRE A HAIR</a>
+                <a target="_blank" href="https://maps.google.com/?q=LA+CHAMBRE+A+HAIR 29+PL+MAZEL+PIGNANS">LA CHAMBRE A HAIR</a>
               </li>
               <li>
                 <a target="_blank" href="https://maps.google.com/?q=VENT%27CONTR%27HAIR 14+RUE+DU+HAUT+PREFAILLES+PREFAILLES">VENT'CONTR'HAIR</a>
@@ -479,7 +617,16 @@
                 <a target="_blank" href="https://maps.google.com/?q=RECUP%27HAIR 32+RUE+FAIDHERBE+PARIS+11">RECUP'HAIR</a>
               </li>
               <li>
+                <a target="_blank" href="https://maps.google.com/?q=COUPE+DU+MONDE 17+RUE+GAMBETTA+VILLIERS-LE-BEL">COUPE DU MONDE</a>
+              </li>
+              <li>
                 <a target="_blank" href="https://maps.google.com/?q=NUCL+HAIR CHE+DU+PRADAS+MAUZAC">NUCL HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=LA+POUDRI%27HAIR 3+CHE+DE+LA+POUDRIERE+SAINT-PAUL">LA POUDRI'HAIR</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=PETARD+A+MECHE ">PETARD A MECHE</a>
               </li>
               <li>
                 <a target="_blank" href="https://maps.google.com/?q=NEFERTI%27TIF 6+RUE+HUBERT+DE+LA+BROSSE+ORVAULT">NEFERTI'TIF</a>
@@ -512,20 +659,68 @@
                 <a target="_blank" href="https://maps.google.com/?q=BUENO+S+HAIR 88+AV+VICTOR+HUGO+TULLE">BUENO S HAIR</a>
               </li>
               <li>
+                <a target="_blank" href="https://maps.google.com/?q=SPACE+INVHEADER 34+RUE+VERRERIE+AIX-EN-PROVENCE">SPACE INVHEADER</a>
+              </li>
+              <li>
                 <a target="_blank" href="https://maps.google.com/?q=BOUC+ET+MISS+HAIR 14+RUE+DE+L%27EGALITE+VILLENEUVE-SAINT-GERMAIN">BOUC ET MISS HAIR</a>
               </li>
             </ul>
-            <p>
-              Pour finir, il semble que depuis le début de l'enregistrements des établissements dans la base de l'INSEE, aucun salon de coiffure ne se soit appelé:
-              <ul>
-                <li>
-                  'Apéritif'
-                </li>
-                <li>
-                  'Culin'hair'
-                </li>
-              </ul>
-            </p>
+          </p>
+          <p>
+            Certains salons semblent avoir tenté des jeux de mots, pas tout à fait heureux, ou avec le mauvais champs lexical:
+            <ul>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=ABCD+TIF LE+MAILLARD+ANCY">ABCD TIF</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=ARTIST%27TIF 10+RUE+COLONEL+A+LEFEBVRE+CHAMPSECRET">ARTIST'TIF</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=SCARAMECHE 2+RUE+DE+LA+PROVIDENCE+LE+POULIGUEN">SCARAMECHE</a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            En listant les mots utilisés par chaque établissement, trié par ordre d'apparition, et filtré sur le champs lexical de la coiffure a également permis de déterrer quelsques perles comme:
+            <ul>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=NO+S+TRESSES 8+PL+FRANCISCO+FERRER+BEAUVOIS-EN-CAMBRESIS">NO S TRESSES</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=QUEER+CHEVELU 2+RUE+ETIENNE+MAREY+PARIS+20">QUEER CHEVELU</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=SAM+DECOIFF ">SAM DECOIFF</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=LA+COUPA+CABANA 15+BD+CARLONE+NICE">LA COUPA CABANA</a>
+              </li>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=NO+PEIGNE+NO+GAIN 1+RUE+DU+MAL+FOCH+MARCKOLSHEIM">NO PEIGNE NO GAIN</a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            Mais le plus drôle de tous reste:
+            <ul>
+              <li>
+                <a target="_blank" href="https://maps.google.com/?q=MD%27HAIR 199+IMP+BEL+AIR+PERREUX">MD'HAIR</a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            Pour finir, il semble que depuis le début de l'enregistrement des établissements dans la base de l'INSEE, aucun salon de coiffure ne se soit appelé:
+            <ul>
+              <li>
+                'Apéritif'
+              </li>
+              <li>
+                'Culin'hair'
+              </li>
+              <li>
+                'James Blonde'
+              </li>
+            </ul>
           </p>
         </div>
       </section>
@@ -546,6 +741,9 @@
           <p>
             Ce site répertorie les établissements de coiffure (indiqués par le code  <a href="https://www.insee.fr/fr/metadonnees/nafr2/sousClasse/96.02A">Nomenclature d'Activité Française 96.02A</a>) dont les noms contiennent <strong>'coif'</strong>,  <strong>'mèche'</strong>,  <strong>'tif'</strong>, ou encore  <strong>'épi'</strong>, qui sont encore en activité au 1er août 2021, dans le but de détecter des jeux de mots ravissants. 
           </p>
+          <p>
+            Une recherche supplémentaire de tous les mots utilisés par tous les salons, trié par nombre d'apparence, a permis également d'identifier quelques calembours bien choisis, notamment 'RACINE CARRÉE'. 
+          </p>
           <h3>
             D'où viennent les données?
           </h3>
@@ -562,7 +760,7 @@
             Méthodologie
           </h3>
           <p>
-            Pour la sélection des noms à blague, parmis les 46000+ établissement de la base INSEE, une première passe consiste à sélectionner ceux dont le nom contiennent une de ces chaînes de caractère: <code>hair</code>, <code>tif</code>, <code>epi</code>, <code>mech</code>, ce qui réduit le compte à ~5700, puis de manuellement filtrer ceux qui contiennent effectivement un jeu de mots (et éliminer les nombreux "Hair Fashion" et autres "Hair Instituts, etc.), ce qui réduit la liste à ~4000. Ce traitement étant manuel, des oublis ont pu être faits sur des calembours les moins évidents... Pour cette étape, le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/blague.rb">blague.rb</a></code> facilite la revue des noms d'établissement.
+            Pour la sélection des noms à blague, parmis les 46000+ établissement de la base INSEE, une première passe consiste à sélectionner ceux dont le nom contiennent une de ces chaînes de caractère: <code>hair</code>, <code>tif</code>, <code>epi</code>, <code>mech</code>, ce qui réduit le compte à ~5700, puis de manuellement filtrer ceux qui contiennent effectivement un jeu de mots (et éliminer les nombreux "Hair Fashion" et autres "Hair Instituts, etc.), ce qui réduit la liste à ~4000. Ce traitement étant manuel, des oublis ont pu être faits sur les calembours les moins évidents... Pour cette étape, le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/blague.rb">blague.rb</a></code> facilite la revue des noms d'établissement.
           </p>
           <p>
             D'autres mots relatifs à la coiffure sont parfois utilisés pour des calembours, par exemple <code>coiff</code>. Un <a href="http://www.coiff-emoi-tremblay.com/">salon de Seine-Saint-Denis</a> s'appelle par exemple "Coiff'Emoi". Toutefois, un très grand nombre de coiffeurs ont cette chaine de caractère dans leur nom (plus de 21000), dont la plupart ne contiennent aucun jeu de mot particulier, ce qui rendrait un traitement manuel particulièrement fastidieux. 
@@ -574,13 +772,13 @@
             Reconstruire le jeu de données de ce site
           </h3>
           <p>
-            Une fois les bases téléchargées et décompressées, le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/sirene.rb">sirene.rb</a></code> pour construire le fichier<code> coiffeurs.sqlite</code> Ce script filtre les entrées du fichier <code>/tmp/StockEtablissement_utf8.csv</code> pour en extraire les établissements de coiffure, et d'autres informations concernant leur nom et adresse.
+            Une fois les bases téléchargées et décompressées, le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/sirene.rb">sirene.rb</a></code> permet de construire le fichier<code> coiffeurs.sqlite</code>. Ce script filtre les entrées du fichier <code>/tmp/StockEtablissement_utf8.csv</code> pour en extraire les établissements de coiffure, et d'autres informations concernant leur nom et adresse.
           </p>
           <p>
             Pour obtenir les coordonnées latitude/longitude à partir de l'adresse, il faut ensuite utiliser un service de geocoding. J'utilise ici la librairie<a href="https://github.com/alexreisner/geocoder"> Ruby Geocoder</a> qui permet d'accéder à la fois aux API de  <a href="https://geo.api.gouv.fr/adresse">l'etalab</a> ainsi qu'aux API de <a href="https://developers.google.com/maps/documentation/geocoding/overview"> Google</a> qui, elles, nécessitent une clé API.
           </p>
           <p>
-            Le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/coords.rb">coords.rb</a></code> permet d'utiliser ces APIs. Lancer d'abord  <code>ruby coords.rb</code> pour mettre à jour le plus d'adresse avec l'API etalab, puis (après avoir mis à jour le fichier <code>.api_key  </code> avec votre clé API, lancer <code>ruby coords.rb google</code> pour obtenir le coordonnées des adresses qui n'ont pas pu être résolues avec l'etalab.
+            Le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/coords.rb">coords.rb</a></code> permet d'utiliser ces APIs. Lancer d'abord  <code>ruby coords.rb</code> pour mettre à jour le plus d'adresse avec l'API etalab, puis (après avoir mis à jour le fichier <code>.api_key  </code> avec votre clé API), lancer <code>ruby coords.rb google</code> pour obtenir le coordonnées des adresses qui n'ont pas pu être résolues avec l'etalab.
           </p>
           <p>
             Pour des soucis de performance, la totalité de la base de données est ensuite exportée au format geojson pour être utilisée par les cartes Leaflets ci-dessus. Le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/statify.rb">statify.rb</a></code> réalise les transformations nécessaires pour construire l'intégralité du site <a href="https://tif.hair">tif.hair</a> dans un répertoire de destination en lançant <code> ruby statify.rb src <destination></code>
@@ -608,6 +806,38 @@
               <a href="https://github.com/jgthms/minireset.css/blob/master/LICENSE">MiniReset MIT License</a>
             </li>
           </ul>
+        </div>
+      </section>
+      <section id="references">
+        <h2>
+          Références
+        </h2>
+        <div class="references">
+          <p>
+            Le sujet a déjà été traité dans divers endroits:
+            <ul>
+              <li>
+                <a href="https://www.instagram.com/lolcoiffeur/">Instagram 'lolcoiffeur'</a>
+              </li>
+              <li>
+                <a href="https://lolcoiffeurs.tumblr.com/">Tumblr 'LOLcoiffeur'</a>
+              </li>
+              <li>
+                <a href="https://www.amazon.fr/Tir%C3%A9-par-cheveux-enseignes-d%C3%A9coiffent/dp/2842306198">Tiré par les cheveux: Des enseignes qui décoiffent Broché – Illustré, 17 mai 2018</a>
+              </li>
+              <li>
+                <a href="https://www.lemonde.fr/les-decodeurs/article/2016/11/29/hair-et-tif-des-noms-de-salons-qui-defrisent_5040180_4355770.html">« Hair » et « tif », des noms de salons de coiffure qui défrisent, LeMonde Publié le 29 novembre 2016 à 12h34</a>
+              </li>
+            </ul>
+          </p>
+          <p>
+            Faites également attention aux fakes!
+            <ul>
+              <li>
+                <a href="https://www.francebleu.fr/infos/insolite/non-il-n-y-pas-de-salon-de-coiffure-adolf-hitl-hair-strasbourg-1460971142">Non, il n'y a pas de salon de coiffure "Adolf Hitl'hair" à Strasbourg, FranceBleu (18 avril 2016)</a>
+              </li>
+            </ul>
+          </p>
         </div>
       </section>
     </div>
