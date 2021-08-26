@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/pics/favicon-32x32.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;400;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
@@ -18,845 +18,846 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
   </head>
   <body>
-    <div class="container">
-      <nav class="fixed-nav-bar">
-        <div id="menu" class="menu">
-          <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu"> Menu</a>
-          <ul class="menu-items">
-            <li>
-              <a href="#globalmap">Carte globale</a>
-            </li>
-            <li>
-              <a href="#stats">Stats & Palmarès</a>
-            </li>
-            <li>
-              <a href="#dmap">Par département</a>
-            </li>
-            <li>
-              <a href="#about">Infos & Méthodo</a>
-            </li>
-            <li>
-              <a href="https://github.com/tifhair/tifhair-tools">Github</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <h1>
-        Les coiffeurs sont des blagueurs
-      </h1>
-      <section id="globalmap">
-        <h2>
-          Carte globale
-        </h2>
-        <div class="filters">
-          <label>Filter par Nom:<input class="filter" id="filter_name" type="search" placeholder="Établissement" /></label><label>Filter par Departement:<select id="filter_dept" class="filter">
-              <option value="*" selected="selected">
-                *
-              </option>
-              <option value="01">
-                01
-              </option>
-              <option value="02">
-                02
-              </option>
-              <option value="03">
-                03
-              </option>
-              <option value="04">
-                04
-              </option>
-              <option value="05">
-                05
-              </option>
-              <option value="06">
-                06
-              </option>
-              <option value="07">
-                07
-              </option>
-              <option value="08">
-                08
-              </option>
-              <option value="09">
-                09
-              </option>
-              <option value="10">
-                10
-              </option>
-              <option value="11">
-                11
-              </option>
-              <option value="12">
-                12
-              </option>
-              <option value="13">
-                13
-              </option>
-              <option value="14">
-                14
-              </option>
-              <option value="15">
-                15
-              </option>
-              <option value="16">
-                16
-              </option>
-              <option value="17">
-                17
-              </option>
-              <option value="18">
-                18
-              </option>
-              <option value="19">
-                19
-              </option>
-              <option value="20">
-                20
-              </option>
-              <option value="21">
-                21
-              </option>
-              <option value="22">
-                22
-              </option>
-              <option value="23">
-                23
-              </option>
-              <option value="24">
-                24
-              </option>
-              <option value="25">
-                25
-              </option>
-              <option value="26">
-                26
-              </option>
-              <option value="27">
-                27
-              </option>
-              <option value="28">
-                28
-              </option>
-              <option value="29">
-                29
-              </option>
-              <option value="30">
-                30
-              </option>
-              <option value="31">
-                31
-              </option>
-              <option value="32">
-                32
-              </option>
-              <option value="33">
-                33
-              </option>
-              <option value="34">
-                34
-              </option>
-              <option value="35">
-                35
-              </option>
-              <option value="36">
-                36
-              </option>
-              <option value="37">
-                37
-              </option>
-              <option value="38">
-                38
-              </option>
-              <option value="39">
-                39
-              </option>
-              <option value="40">
-                40
-              </option>
-              <option value="41">
-                41
-              </option>
-              <option value="42">
-                42
-              </option>
-              <option value="43">
-                43
-              </option>
-              <option value="44">
-                44
-              </option>
-              <option value="45">
-                45
-              </option>
-              <option value="46">
-                46
-              </option>
-              <option value="47">
-                47
-              </option>
-              <option value="48">
-                48
-              </option>
-              <option value="49">
-                49
-              </option>
-              <option value="50">
-                50
-              </option>
-              <option value="51">
-                51
-              </option>
-              <option value="52">
-                52
-              </option>
-              <option value="53">
-                53
-              </option>
-              <option value="54">
-                54
-              </option>
-              <option value="55">
-                55
-              </option>
-              <option value="56">
-                56
-              </option>
-              <option value="57">
-                57
-              </option>
-              <option value="58">
-                58
-              </option>
-              <option value="59">
-                59
-              </option>
-              <option value="60">
-                60
-              </option>
-              <option value="61">
-                61
-              </option>
-              <option value="62">
-                62
-              </option>
-              <option value="63">
-                63
-              </option>
-              <option value="64">
-                64
-              </option>
-              <option value="65">
-                65
-              </option>
-              <option value="66">
-                66
-              </option>
-              <option value="67">
-                67
-              </option>
-              <option value="68">
-                68
-              </option>
-              <option value="69">
-                69
-              </option>
-              <option value="70">
-                70
-              </option>
-              <option value="71">
-                71
-              </option>
-              <option value="72">
-                72
-              </option>
-              <option value="73">
-                73
-              </option>
-              <option value="74">
-                74
-              </option>
-              <option value="75">
-                75
-              </option>
-              <option value="76">
-                76
-              </option>
-              <option value="77">
-                77
-              </option>
-              <option value="78">
-                78
-              </option>
-              <option value="79">
-                79
-              </option>
-              <option value="80">
-                80
-              </option>
-              <option value="81">
-                81
-              </option>
-              <option value="82">
-                82
-              </option>
-              <option value="83">
-                83
-              </option>
-              <option value="84">
-                84
-              </option>
-              <option value="85">
-                85
-              </option>
-              <option value="86">
-                86
-              </option>
-              <option value="87">
-                87
-              </option>
-              <option value="88">
-                88
-              </option>
-              <option value="89">
-                89
-              </option>
-              <option value="90">
-                90
-              </option>
-              <option value="91">
-                91
-              </option>
-              <option value="92">
-                92
-              </option>
-              <option value="93">
-                93
-              </option>
-              <option value="94">
-                94
-              </option>
-              <option value="95">
-                95
-              </option>
-              <option value="97">
-                97
-              </option>
-            </select></label><label>Filter par Ville:<input class="filter" id="filter_ville" type="search" placeholder="Ville" /></label>
-        </div>
-        <div id="mapid"></div>
-        <aside id="asideresults">
-          <p id="resultcount"></p>
-          <button id="read_more" class="read_more">Afficher plus</button>
-          <ul id="listecoiffeurs" title="Cliquez pour zoomer!"></ul>
-        </aside>
-      </section>
-      <section id="stats">
-        <h2>
-          Statistiques et palmarès
-        </h2>
-        <div class="palmares">
-          <h3>
-            D'abord quelques chiffres:
-          </h3>
-          <ul>
-            <li>
-              Il y a <strong>85</strong> salons actifs avec un nom dérivé de <strong>Imagin'hair</strong>
-            </li>
-            <li>
-              Il y a <strong>63</strong> salons actifs avec un nom dérivé de <strong>Bulles d'hair</strong>
-            </li>
-            <li>
-              Il y a <strong>60</strong> salons actifs avec un nom dérivé de <strong>Atmosp'hair</strong>
-            </li>
-            <li>
-              Il y a <strong>46</strong> salons actifs avec un nom dérivé de <strong>Caract'hair</strong>
-            </li>
-            <li>
-              Il y a <strong>41</strong> salons actifs avec un nom dérivé de <strong>Planet'hair</strong>
-            </li>
-            <li>
-              On trouve <strong>120</strong> salons actifs avec un nom smiliaire à <strong>Diminu'tif</strong>
-            </li>
-            <li>
-              On trouve <strong>95</strong> salons actifs avec un nom smiliaire à <strong>Evolu'tif</strong>
-            </li>
-            <li>
-              On trouve <strong>56</strong> salons actifs avec un nom smiliaire à <strong>Infini'tif</strong>
-            </li>
-            <li>
-              On trouve <strong>51</strong> salons actifs avec un nom smiliaire à <strong>Imagina'tif</strong>
-            </li>
-            <li>
-              On trouve <strong>38</strong> salons actifs avec un nom smiliaire à <strong>Instinc'tif</strong>
-            </li>
-          </ul>
-          <h3>
-            Palmarès d'excellents calembours
-          </h3>
-          <p>
-            Bien qu'il ne soit plus en activité, le salon <a target="_blank" href="https://maps.google.com/?q=A+Thaon+Tifs ">A Thaon Tifs</a> à Thaon (Calvados) réalise un jeu de mot animalier. D'autres, encore en activité aiment aussi les animaux:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=HAIR%27IS%27SON 25+CRS+DE+LA+PLACE+SAINT-ANDRE-DE-SANGONIS">HAIR'IS'SON</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=VIP%27HAIR 74+GRANDE+RUE+PONT-DE-VEYLE">VIP'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=BUTT%27HAIR+FLY 45+RUE+DU+GENERAL+DE+GAULLE+SEREMANGE-ERZANGE">BUTT'HAIR FLY</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Des phrases et locutions:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=AU+PAYS+DES+M%27HAIR+VEILLES 8+GRANDE+RUE+LANTENNE-VERTIERE">AU PAYS DES M'HAIR VEILLES</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=AINSI+SOIT+TIF 25+PL+GENISSIEU+CHABEUIL">AINSI SOIT TIF</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=AH+QUE+TIFS 927+RUE+DU+CHEMIN+VERT+SAUMUR">AH QUE TIFS</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=TELLE+M%27HAIR+TELLE+FILLE CHAMPAGNE+CHAMPAGNE-EN-VALROMEY">TELLE M'HAIR TELLE FILLE</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=SAVOIR+COIF+HAIR 4+PL+DE+LA+POSTE+LES+PIEUX">SAVOIR COIF HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=FAUDRA+TIF+HAIR 19+RUE+DE+LA+PREFECTURE+DIJON">FAUDRA TIF HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=LE+BEST+C+L%27HAIR 30+RUE+DE+DINAN+GEVEZE">LE BEST C L'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ALT%27HAIR++%26+GO 42+BD+HERAULT+SAINT-BRIEUC">ALT'HAIR  & GO</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=JENNY+PEIGNE+NI+CISEAUX 12+KERALET+FEREL">JENNY PEIGNE NI CISEAUX</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=COURT+TOUJOURS 24+PL+DU+DIX+HUIT+OCTOBRE+CHATEAUDUN">COURT TOUJOURS</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=BOUCLE+LA 5+RUE+PORTE+CHARTRAINE+DREUX">BOUCLE LA</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=PAUSE+COIFFEE 18+RUE+DU+FOUR+LA+CHAPELLE-DES-MARAIS">PAUSE COIFFEE</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=COUPE+DU+MONDE 17+RUE+GAMBETTA+VILLIERS-LE-BEL">COUPE DU MONDE</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Certains tentent des blagues multi-lingues:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=UPSTHAIRS 309+RTE+DE+GRENOBLE+LE+MONETIER-LES-BAINS">UPSTHAIRS</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=UNITED+HAIR+LINES ">UNITED HAIR LINES</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=F%27HAIR+PLAY 33+RUE+SAINTE+MARIE+SAINT-DENIS">F'HAIR PLAY</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ROCKSTHAIR AV+JOSEPH+COMBIER+LIVRON-SUR-DROME">ROCKSTHAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ROCK+HAIR+ROLL 5+RUE+LEON+BLUM+MARLES-LES-MINES">ROCK HAIR ROLL</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=BIO+TIFF+HOULE 4+RUE+DU+GRENIER+A+SEL+FECAMP">BIO TIFF HOULE</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Les fans de mathématiques pourront se rendre au choix chez:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=TRIANGUL%27HAIR 19+RUE+GUILLAUME+TELL+DIJON">TRIANGUL'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=LINE+ET+HAIR 5+RUE+DE+L%27HOTEL+DE+VILLE+BUXEROLLES">LINE ET HAIR</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Tandis que les littéraires seront plus attirés par:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=VOLT%27HAIR+COIFFURE ">VOLT'HAIR COIFFURE</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=APAULINE%27HAIR GR+GRANDE+RUE+DUN-LE-PALESTEL">APAULINE'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=GRAMME+HAIR 12+RUE+GRAMME+PARIS+15">GRAMME HAIR</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Les informaticiens ne sont pas en reste avec
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=CYB+HAIR 9+RUE+MAJOR+MARTIN+LYON+1ER">CYB HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=CIB%27HAIR 9+RUE+CHARLES+LE+HIR+GUILERS">CIB'HAIR</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            De nombreuses possibilités pour intégrer son nom dans celui de son salon:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=AXELLE%27+HAIR LE+BOURG+CERISY-BELLE-ETOILE">AXELLE' HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=VAL%27HAIR%27IE PL+DE+L+EGLISE+FAREINS">VAL'HAIR'IE</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=JENNIF%27HAIR RUE+DU+DOCTEUR+EMILE+PARES+RIVESALTES">JENNIF'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=TIFFANY+COIFFURE 55+RUE+BEAUMONT+NICE">TIFFANY COIFFURE</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=HAIR%27V PL+DES+MARELLES+CHANTEPIE">HAIR'V</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=CL%27+HAIR 8+PL+DU+XIV+JUILLET+CASTILLON-LA-BATAILLE">CL' HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=EMMAGINA%27TIF 33+RUE+DU+MARECHAL+FOCH+BRIONNE">EMMAGINA'TIF</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=BERENG%27HAIR AV+DU+GENERAL+DE+GAULLE+PORT-EN-BESSIN-HUPPAIN">BERENG'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=SEV+HAIR%27IN 12+RUE+DE+METZ+AMNEVILLE">SEV HAIR'IN</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=FRED%27HAIR%27IC 7+RUE+RENE+MASSON+BRACIEUX">FRED'HAIR'IC</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ALB%27HAIR+COIFFURE+A+DOMICILE 4+RUE+DES+VIOLETTES+ORTAFFA">ALB'HAIR COIFFURE A DOMICILE</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=MYLEN+HAIR 7+PL+DE+L+EGLISE+JOB">MYLEN HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=J%27HAIR-AIME 115+RUE+PIERRE+BROSSOLETTE+ESQUERDES">J'HAIR-AIME</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=HAIR%27ONE 22+PL+DES+LICES+VANNES">HAIR'ONE</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Plusieurs salons ont un nom en rapport avec la région:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=CORS%27HAIR 67+RUE+VILLE+PEPIN+SAINT-MALO">CORS'HAIR</a> à Saint-Malo
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=FINIST%27HAIR CENTRE+COMMERCIAL+AR+ROUDOUR+GUERLESQUIN">FINIST'HAIR</a> en Bretagne
-              </li>
-            </ul>
-          </p>
-          <p>
-            Ceux-ci semblent pouvoir fournir des services... 'différents':
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=CED%27A+TIF 6+RUE+DU+CENTRE+CHANGE">CED'A TIF</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ADULT%27HAIR 37+RUE+GABRIEL+PERI+GRENOBLE">ADULT'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=MISSION+HAIR 43+AV+FELIX+FAURE+LYON+3EME">MISSION HAIR</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Ces salons n'hésitent pas à chercher dans les références 'Pop':
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ABRARACOUR+%27TIFS CHAUFFOUR+SAINT-YBARD">ABRARACOUR 'TIFS</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=TIFS+ET+TONDU 3+RUE+MERCIERE+SAINT-DIDIER-EN-VELAY">TIFS ET TONDU</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=SPEED%27HAIR+MAN 4+RUE+LAMARTINE+AMIENS">SPEED'HAIR MAN</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=PRINCE+DE+BEL+HAIR 28+RUE+DE+LA+PREVOTE+PERENCHIES">PRINCE DE BEL HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=PARTOUTA%27TIF 20+RUE+DES+BATAILLES+LONGUES+MIOS">PARTOUTA'TIF</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=GIJHAIR 12+RUE+DU+COUVENT+HAGUENAU">GIJHAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=FACELOOK 20+RUE+DU+GENERAL+BIGEARD+LE+TAMPON">FACELOOK</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Une séléction de noms très originaux:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=LA+CHAMBRE+A+HAIR 14+RUE+PIERRE+GILLET+CHARLEVILLE-MEZIERES">LA CHAMBRE A HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=VENT%27CONTR%27HAIR 14+RUE+DU+HAUT+PREFAILLES+PREFAILLES">VENT'CONTR'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=TRALAL%27HAIR 39+RUE+ELISEE+CLAIS+FERQUES">TRALAL'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=SAGIT+HAIR RUE+DES+BINELLES+CHAGNY">SAGIT HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=REVOLVHAIR 29+RUE+DES+BLANCS+MANTEAUX+PARIS+4">REVOLVHAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=RECUP%27HAIR 32+RUE+FAIDHERBE+PARIS+11">RECUP'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=COUPE+DU+MONDE 17+RUE+GAMBETTA+VILLIERS-LE-BEL">COUPE DU MONDE</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=NUCL+HAIR CHE+DU+PRADAS+MAUZAC">NUCL HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=LA+POUDRI%27HAIR 3+CHE+DE+LA+POUDRIERE+SAINT-PAUL">LA POUDRI'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=PETARD+A+MECHE ">PETARD A MECHE</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=NEFERTI%27TIF 6+RUE+HUBERT+DE+LA+BROSSE+ORVAULT">NEFERTI'TIF</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=NAMAST%27HAIR 12+RUE+ST+JEAN+CIRY-SALSOGNE">NAMAST'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=LUCIF%27HAIR 2+CHE+DU+MARCHE+A+BLE+SAINT-MARDS-EN-OTHE">LUCIF'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=IMP%27HAIRIAL 270+CHE+DU+CAMP+DE+LAMBERT+AUBAGNE">IMP'HAIRIAL</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=F%27HAIR+FORGE-COIFFURE 70+PL+DES+PLEIADES+SAINT-PIERRE-EN-FAUCIGNY">F'HAIR FORGE-COIFFURE</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=DIV+HAIR+GENS 16+BD+DE+L+EUROPE+MULHOUSE">DIV HAIR GENS</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=CYMIL%27HAIR 2+RLE+PETIT+JEAN+GRANCEY-LE-CHATEAU-NEUVELLE">CYMIL'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=COLOCAT%27HAIR 1151+CHE+DU+PLAN+VISAN">COLOCAT'HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=CLAFOU%27TIFS 1+RUE+DES+QUARANTE+RETY">CLAFOU'TIFS</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=BUENO+S+HAIR 88+AV+VICTOR+HUGO+TULLE">BUENO S HAIR</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=SPACE+INVHEADER 34+RUE+VERRERIE+AIX-EN-PROVENCE">SPACE INVHEADER</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=BOUC+ET+MISS+HAIR 14+RUE+DE+L%27EGALITE+VILLENEUVE-SAINT-GERMAIN">BOUC ET MISS HAIR</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Certains salons semblent avoir tenté des jeux de mots, pas tout à fait heureux, ou avec le mauvais champs lexical:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ABCD+TIF LE+MAILLARD+ANCY">ABCD TIF</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=ARTIST%27TIF 10+RUE+COLONEL+A+LEFEBVRE+CHAMPSECRET">ARTIST'TIF</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=SCARAMECHE 2+RUE+DE+LA+PROVIDENCE+LE+POULIGUEN">SCARAMECHE</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            En listant les mots utilisés par chaque établissement, trié par ordre d'apparition, et filtré sur le champs lexical de la coiffure a également permis de déterrer quelsques perles comme:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=NO+S+TRESSES 8+PL+FRANCISCO+FERRER+BEAUVOIS-EN-CAMBRESIS">NO S TRESSES</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=QUEER+CHEVELU 2+RUE+ETIENNE+MAREY+PARIS+20">QUEER CHEVELU</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=SAM+DECOIFF ">SAM DECOIFF</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=LA+COUPA+CABANA 15+BD+CARLONE+NICE">LA COUPA CABANA</a>
-              </li>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=NO+PEIGNE+NO+GAIN 1+RUE+DU+MAL+FOCH+MARCKOLSHEIM">NO PEIGNE NO GAIN</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Mais le plus drôle de tous reste:
-            <ul>
-              <li>
-                <a target="_blank" href="https://maps.google.com/?q=MD%27HAIR 199+IMP+BEL+AIR+PERREUX">MD'HAIR</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Pour finir, il semble que depuis le début de l'enregistrement des établissements dans la base de l'INSEE, aucun salon de coiffure ne se soit appelé:
-            <ul>
-              <li>
-                'Apéritif'
-              </li>
-              <li>
-                'Culin'hair'
-              </li>
-              <li>
-                'James Blonde'
-              </li>
-            </ul>
-          </p>
-        </div>
-      </section>
-      <section id="dmap">
-        <h2>
-          Stats par département
-        </h2>
-        <div id="deptmap"></div>
+    <nav class="fixed-nav-bar">
+      <div id="menu" class="menu">
+        <a class="show" href="#menu">Menu</a><a class="hide" href="#hidemenu"> Menu</a>
+        <ul class="menu-items">
+          <li>
+            <a href="#globalmap">Carte globale</a>
+          </li>
+          <li>
+            <a href="#stats">Stats & Palmarès</a>
+          </li>
+          <li>
+            <a href="#dmap">Par département</a>
+          </li>
+          <li>
+            <a href="#about">Infos & Méthodo</a>
+          </li>
+          <li>
+            <a href="#references">Références</a>
+          </li>
+          <li>
+            <a href="https://github.com/tifhair/tifhair-tools">Github</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <h1>
+      Les coiffeurs sont des blagueurs
+    </h1>
+    <section id="globalmap">
+      <h2>
+        Carte globale
+      </h2>
+      <div class="filters">
+        <label>Filter par Nom:<input class="filter" id="filter_name" type="search" placeholder="Établissement" /></label><label>Filter par Departement:<select id="filter_dept" class="filter">
+            <option value="*" selected="selected">
+              *
+            </option>
+            <option value="01">
+              01
+            </option>
+            <option value="02">
+              02
+            </option>
+            <option value="03">
+              03
+            </option>
+            <option value="04">
+              04
+            </option>
+            <option value="05">
+              05
+            </option>
+            <option value="06">
+              06
+            </option>
+            <option value="07">
+              07
+            </option>
+            <option value="08">
+              08
+            </option>
+            <option value="09">
+              09
+            </option>
+            <option value="10">
+              10
+            </option>
+            <option value="11">
+              11
+            </option>
+            <option value="12">
+              12
+            </option>
+            <option value="13">
+              13
+            </option>
+            <option value="14">
+              14
+            </option>
+            <option value="15">
+              15
+            </option>
+            <option value="16">
+              16
+            </option>
+            <option value="17">
+              17
+            </option>
+            <option value="18">
+              18
+            </option>
+            <option value="19">
+              19
+            </option>
+            <option value="20">
+              20
+            </option>
+            <option value="21">
+              21
+            </option>
+            <option value="22">
+              22
+            </option>
+            <option value="23">
+              23
+            </option>
+            <option value="24">
+              24
+            </option>
+            <option value="25">
+              25
+            </option>
+            <option value="26">
+              26
+            </option>
+            <option value="27">
+              27
+            </option>
+            <option value="28">
+              28
+            </option>
+            <option value="29">
+              29
+            </option>
+            <option value="30">
+              30
+            </option>
+            <option value="31">
+              31
+            </option>
+            <option value="32">
+              32
+            </option>
+            <option value="33">
+              33
+            </option>
+            <option value="34">
+              34
+            </option>
+            <option value="35">
+              35
+            </option>
+            <option value="36">
+              36
+            </option>
+            <option value="37">
+              37
+            </option>
+            <option value="38">
+              38
+            </option>
+            <option value="39">
+              39
+            </option>
+            <option value="40">
+              40
+            </option>
+            <option value="41">
+              41
+            </option>
+            <option value="42">
+              42
+            </option>
+            <option value="43">
+              43
+            </option>
+            <option value="44">
+              44
+            </option>
+            <option value="45">
+              45
+            </option>
+            <option value="46">
+              46
+            </option>
+            <option value="47">
+              47
+            </option>
+            <option value="48">
+              48
+            </option>
+            <option value="49">
+              49
+            </option>
+            <option value="50">
+              50
+            </option>
+            <option value="51">
+              51
+            </option>
+            <option value="52">
+              52
+            </option>
+            <option value="53">
+              53
+            </option>
+            <option value="54">
+              54
+            </option>
+            <option value="55">
+              55
+            </option>
+            <option value="56">
+              56
+            </option>
+            <option value="57">
+              57
+            </option>
+            <option value="58">
+              58
+            </option>
+            <option value="59">
+              59
+            </option>
+            <option value="60">
+              60
+            </option>
+            <option value="61">
+              61
+            </option>
+            <option value="62">
+              62
+            </option>
+            <option value="63">
+              63
+            </option>
+            <option value="64">
+              64
+            </option>
+            <option value="65">
+              65
+            </option>
+            <option value="66">
+              66
+            </option>
+            <option value="67">
+              67
+            </option>
+            <option value="68">
+              68
+            </option>
+            <option value="69">
+              69
+            </option>
+            <option value="70">
+              70
+            </option>
+            <option value="71">
+              71
+            </option>
+            <option value="72">
+              72
+            </option>
+            <option value="73">
+              73
+            </option>
+            <option value="74">
+              74
+            </option>
+            <option value="75">
+              75
+            </option>
+            <option value="76">
+              76
+            </option>
+            <option value="77">
+              77
+            </option>
+            <option value="78">
+              78
+            </option>
+            <option value="79">
+              79
+            </option>
+            <option value="80">
+              80
+            </option>
+            <option value="81">
+              81
+            </option>
+            <option value="82">
+              82
+            </option>
+            <option value="83">
+              83
+            </option>
+            <option value="84">
+              84
+            </option>
+            <option value="85">
+              85
+            </option>
+            <option value="86">
+              86
+            </option>
+            <option value="87">
+              87
+            </option>
+            <option value="88">
+              88
+            </option>
+            <option value="89">
+              89
+            </option>
+            <option value="90">
+              90
+            </option>
+            <option value="91">
+              91
+            </option>
+            <option value="92">
+              92
+            </option>
+            <option value="93">
+              93
+            </option>
+            <option value="94">
+              94
+            </option>
+            <option value="95">
+              95
+            </option>
+            <option value="97">
+              97
+            </option>
+          </select></label><label>Filter par Ville:<input class="filter" id="filter_ville" type="search" placeholder="Ville" /></label>
+      </div>
+      <div id="mapid"></div>
+      <aside id="asideresults">
+        <p id="resultcount"></p>
+        <button id="read_more" class="read_more">Afficher plus</button>
+        <ul id="listecoiffeurs" title="Cliquez pour zoomer!"></ul>
+      </aside>
+    </section>
+    <section id="stats">
+      <h2>
+        Statistiques et palmarès
+      </h2>
+      <div class="palmares">
+        <h3>
+          D'abord quelques chiffres:
+        </h3>
+        <ul>
+          <li>
+            Il y a <strong>85</strong> salons actifs avec un nom dérivé de <strong>Imagin'hair</strong>
+          </li>
+          <li>
+            Il y a <strong>63</strong> salons actifs avec un nom dérivé de <strong>Bulles d'hair</strong>
+          </li>
+          <li>
+            Il y a <strong>60</strong> salons actifs avec un nom dérivé de <strong>Atmosp'hair</strong>
+          </li>
+          <li>
+            Il y a <strong>46</strong> salons actifs avec un nom dérivé de <strong>Caract'hair</strong>
+          </li>
+          <li>
+            Il y a <strong>41</strong> salons actifs avec un nom dérivé de <strong>Planet'hair</strong>
+          </li>
+          <li>
+            On trouve <strong>120</strong> salons actifs avec un nom smiliaire à <strong>Diminu'tif</strong>
+          </li>
+          <li>
+            On trouve <strong>95</strong> salons actifs avec un nom smiliaire à <strong>Evolu'tif</strong>
+          </li>
+          <li>
+            On trouve <strong>56</strong> salons actifs avec un nom smiliaire à <strong>Infini'tif</strong>
+          </li>
+          <li>
+            On trouve <strong>51</strong> salons actifs avec un nom smiliaire à <strong>Imagina'tif</strong>
+          </li>
+          <li>
+            On trouve <strong>38</strong> salons actifs avec un nom smiliaire à <strong>Instinc'tif</strong>
+          </li>
+        </ul>
+        <h3>
+          Palmarès d'excellents calembours
+        </h3>
         <p>
-          Pour l'ensemble du pays, cela donne  <b>8.8% </b> d'enseignes (en activité) avec des blagues.
-        </p>
-      </section>
-      <section id="about">
-        <h2>
-          Informations & Méthodologie
-        </h2>
-        <div class="about">
-          <h3>
-            Qu'est-ce donc?
-          </h3>
-          <p>
-            Ce site répertorie les établissements de coiffure (indiqués par le code  <a href="https://www.insee.fr/fr/metadonnees/nafr2/sousClasse/96.02A">Nomenclature d'Activité Française 96.02A</a>) dont les noms contiennent <strong>'coif'</strong>,  <strong>'mèche'</strong>,  <strong>'tif'</strong>, ou encore  <strong>'épi'</strong>, qui sont encore en activité au 1er août 2021, dans le but de détecter des jeux de mots ravissants. 
-          </p>
-          <p>
-            Une recherche supplémentaire de tous les mots utilisés par tous les salons, trié par nombre d'apparence, a permis également d'identifier quelques calembours bien choisis, notamment 'RACINE CARRÉE'. 
-          </p>
-          <h3>
-            D'où viennent les données?
-          </h3>
-          <p>
-            La source principale des données est l' <a href="https://www.insee.fr">INSEE (Institut national de la statistique et des études économiques)</a> qui gère également le répertoire système national d'identification et du répertoire des entreprises et de leurs établissements (SIRENE) comprenant les identifiants système d'identification du répertoire des entreprises (SIREN) des entreprises et SIRET de leurs différents établissements. 
-          </p>
-          <p>
-            La base complète de tous les établissements est <a href="https://www.data.gouv.fr/en/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/">disponible ici</a>. Les deux bases utilisées sont <a href="https://files.data.gouv.fr/insee-sirene/StockEtablissement_utf8.zip">StockEtablissement_utf8.zip</a> et <a href="https://files.data.gouv.fr/insee-sirene/StockUniteLegale_utf8.zip">StockUniteLegale_utf8.zip</a>. La première base contient l'intégralité des entreprises et établissements. Toutefois certains noms d'établissements n'y apparaissent pas et la deuxième base est nécessaire pour en trouver des informations plus récentes.
-          </p>
-          <p>
-            Malgré tout ceci, il semble que beaucoup de différences existent entre les bases INSEE et la "réalité" (telle que par exemple Google Maps permet d'explorer). Soit parce que les établissements ont fermé ou changé de nom depuis la date d'export de la base (1er août 2021), soit parce que certaines entreprises déclarées sont domiciliées dans une zone résidentielle, sans réel établissement (par exemple: les coiffeurs à domicile).
-          </p>
-          <h3>
-            Méthodologie
-          </h3>
-          <p>
-            Pour la sélection des noms à blague, parmis les 46000+ établissement de la base INSEE, une première passe consiste à sélectionner ceux dont le nom contiennent une de ces chaînes de caractère: <code>hair</code>, <code>tif</code>, <code>epi</code>, <code>mech</code>, ce qui réduit le compte à ~5700, puis de manuellement filtrer ceux qui contiennent effectivement un jeu de mots (et éliminer les nombreux "Hair Fashion" et autres "Hair Instituts, etc.), ce qui réduit la liste à ~4000. Ce traitement étant manuel, des oublis ont pu être faits sur les calembours les moins évidents... Pour cette étape, le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/blague.rb">blague.rb</a></code> facilite la revue des noms d'établissement.
-          </p>
-          <p>
-            D'autres mots relatifs à la coiffure sont parfois utilisés pour des calembours, par exemple <code>coiff</code>. Un <a href="http://www.coiff-emoi-tremblay.com/">salon de Seine-Saint-Denis</a> s'appelle par exemple "Coiff'Emoi". Toutefois, un très grand nombre de coiffeurs ont cette chaine de caractère dans leur nom (plus de 21000), dont la plupart ne contiennent aucun jeu de mot particulier, ce qui rendrait un traitement manuel particulièrement fastidieux. 
-          </p>
-          <p>
-            Dans les exemples de noms amusants, si plusieurs établissements ont le même nom, un d'entre eux sera pris au hasard lors de la génération du site.
-          </p>
-          <h3>
-            Reconstruire le jeu de données de ce site
-          </h3>
-          <p>
-            Une fois les bases téléchargées et décompressées, le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/sirene.rb">sirene.rb</a></code> permet de construire le fichier<code> coiffeurs.sqlite</code>. Ce script filtre les entrées du fichier <code>/tmp/StockEtablissement_utf8.csv</code> pour en extraire les établissements de coiffure, et d'autres informations concernant leur nom et adresse.Le problème avec cette approche est qu'il est possible que le nom principal ('enseigne1Etablissement' dans la base SIRENE) soit renseigné mais non utilisé par l'établissement. Ce nom est parfois renseigné dans 'denominationUsuelleEtablissement'. À cause de cela, certaines enseignes peuvent manquer dans la base, ou apparaître sous d'autres noms.
-          </p>
-          <p>
-            Pour obtenir les coordonnées latitude/longitude à partir de l'adresse, il faut ensuite utiliser un service de geocoding. J'utilise ici la librairie<a href="https://github.com/alexreisner/geocoder"> Ruby Geocoder</a> qui permet d'accéder à la fois aux API de  <a href="https://geo.api.gouv.fr/adresse">l'etalab</a> ainsi qu'aux API de <a href="https://developers.google.com/maps/documentation/geocoding/overview"> Google</a> qui, elles, nécessitent une clé API.
-          </p>
-          <p>
-            Le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/coords.rb">coords.rb</a></code> permet d'utiliser ces APIs. Lancer d'abord  <code>ruby coords.rb</code> pour mettre à jour le plus d'adresse avec l'API etalab, puis (après avoir mis à jour le fichier <code>.api_key  </code> avec votre clé API), lancer <code>ruby coords.rb google</code> pour obtenir le coordonnées des adresses qui n'ont pas pu être résolues avec l'etalab.
-          </p>
-          <p>
-            Pour des soucis de performance, la totalité de la base de données est ensuite exportée au format geojson pour être utilisée par les cartes Leaflets ci-dessus. Le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/statify.rb">statify.rb</a></code> réalise les transformations nécessaires pour construire l'intégralité du site <a href="https://tif.hair">tif.hair</a> dans un répertoire de destination en lançant <code> ruby statify.rb src <destination></code>
-          </p>
-          <h3>
-            Licences
-          </h3>
+          Bien qu'il ne soit plus en activité, le salon <a target="_blank" href="https://maps.google.com/?q=A+Thaon+Tifs ">A Thaon Tifs</a> à Thaon (Calvados) réalise un jeu de mot animalier. D'autres, encore en activité aiment aussi les animaux:
           <ul>
             <li>
-              <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Licence ouverte etalab</a>
+              <a target="_blank" href="https://maps.google.com/?q=HAIR%27IS%27SON 25+CRS+DE+LA+PLACE+SAINT-ANDRE-DE-SANGONIS">HAIR'IS'SON</a>
             </li>
             <li>
-              <a href="https://github.com/alexreisner/geocoder/blob/master/LICENSE">Ruby Geocoder MIT License</a>
+              <a target="_blank" href="https://maps.google.com/?q=VIP%27HAIR 3+ALL+DUGUAY+TROUIN+NANTES">VIP'HAIR</a>
             </li>
             <li>
-              <a href="https://www.insee.fr/fr/information/2381863">Conditions utilisation données INSEE</a>
-            </li>
-            <li>
-              <a href="https://github.com/Leaflet/Leaflet/blob/master/LICENSE">Leaflet License</a>
-            </li>
-            <li>
-              <a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/MIT-LICENCE.txt">MarkerCluster MIT License</a>
-            </li>
-            <li>
-              <a href="https://github.com/jgthms/minireset.css/blob/master/LICENSE">MiniReset MIT License</a>
+              <a target="_blank" href="https://maps.google.com/?q=BUTT%27HAIR+FLY 45+RUE+DU+GENERAL+DE+GAULLE+SEREMANGE-ERZANGE">BUTT'HAIR FLY</a>
             </li>
           </ul>
-        </div>
-      </section>
-      <section id="references">
-        <h2>
-          Références
-        </h2>
-        <div class="references">
-          <p>
-            Le sujet a déjà été traité dans divers endroits:
-            <ul>
-              <li>
-                <a href="https://www.instagram.com/lolcoiffeur/">Instagram 'lolcoiffeur'</a>
-              </li>
-              <li>
-                <a href="https://lolcoiffeurs.tumblr.com/">Tumblr 'LOLcoiffeur'</a>
-              </li>
-              <li>
-                <a href="https://www.amazon.fr/Tir%C3%A9-par-cheveux-enseignes-d%C3%A9coiffent/dp/2842306198">Tiré par les cheveux: Des enseignes qui décoiffent Broché – Illustré, 17 mai 2018</a>
-              </li>
-              <li>
-                <a href="https://www.lemonde.fr/les-decodeurs/article/2016/11/29/hair-et-tif-des-noms-de-salons-qui-defrisent_5040180_4355770.html">« Hair » et « tif », des noms de salons de coiffure qui défrisent, LeMonde Publié le 29 novembre 2016 à 12h34</a>
-              </li>
-            </ul>
-          </p>
-          <p>
-            Faites également attention aux fakes!
-            <ul>
-              <li>
-                <a href="https://www.francebleu.fr/infos/insolite/non-il-n-y-pas-de-salon-de-coiffure-adolf-hitl-hair-strasbourg-1460971142">Non, il n'y a pas de salon de coiffure "Adolf Hitl'hair" à Strasbourg, FranceBleu (18 avril 2016)</a>
-              </li>
-            </ul>
-          </p>
-        </div>
-      </section>
-    </div>
+        </p>
+        <p>
+          Des phrases et locutions:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=AU+PAYS+DES+M%27HAIR+VEILLES 8+GRANDE+RUE+LANTENNE-VERTIERE">AU PAYS DES M'HAIR VEILLES</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=AINSI+SOIT+TIF 25+PL+GENISSIEU+CHABEUIL">AINSI SOIT TIF</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=AH+QUE+TIFS 927+RUE+DU+CHEMIN+VERT+SAUMUR">AH QUE TIFS</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=TELLE+M%27HAIR+TELLE+FILLE CHAMPAGNE+CHAMPAGNE-EN-VALROMEY">TELLE M'HAIR TELLE FILLE</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=SAVOIR+COIF+HAIR 4+PL+DE+LA+POSTE+LES+PIEUX">SAVOIR COIF HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=FAUDRA+TIF+HAIR 19+RUE+DE+LA+PREFECTURE+DIJON">FAUDRA TIF HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=LE+BEST+C+L%27HAIR 30+RUE+DE+DINAN+GEVEZE">LE BEST C L'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=ALT%27HAIR++%26+GO 42+BD+HERAULT+SAINT-BRIEUC">ALT'HAIR  & GO</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=JENNY+PEIGNE+NI+CISEAUX 12+KERALET+FEREL">JENNY PEIGNE NI CISEAUX</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=COURT+TOUJOURS 24+PL+DU+DIX+HUIT+OCTOBRE+CHATEAUDUN">COURT TOUJOURS</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=BOUCLE+LA 5+RUE+PORTE+CHARTRAINE+DREUX">BOUCLE LA</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=PAUSE+COIFFEE 14+BD+MADAME+MERE+AJACCIO">PAUSE COIFFEE</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=COUPE+DU+MONDE 17+RUE+GAMBETTA+VILLIERS-LE-BEL">COUPE DU MONDE</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Certains tentent des blagues multi-lingues:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=UPSTHAIRS 309+RTE+DE+GRENOBLE+LE+MONETIER-LES-BAINS">UPSTHAIRS</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=UNITED+HAIR+LINES ">UNITED HAIR LINES</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=F%27HAIR+PLAY 33+RUE+SAINTE+MARIE+SAINT-DENIS">F'HAIR PLAY</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=ROCKSTHAIR AV+JOSEPH+COMBIER+LIVRON-SUR-DROME">ROCKSTHAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=ROCK+HAIR+ROLL 5+RUE+LEON+BLUM+MARLES-LES-MINES">ROCK HAIR ROLL</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=BIO+TIFF+HOULE 4+RUE+DU+GRENIER+A+SEL+FECAMP">BIO TIFF HOULE</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Les fans de mathématiques pourront se rendre au choix chez:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=TRIANGUL%27HAIR 19+RUE+GUILLAUME+TELL+DIJON">TRIANGUL'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=LINE+ET+HAIR 5+RUE+DE+L%27HOTEL+DE+VILLE+BUXEROLLES">LINE ET HAIR</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Tandis que les littéraires seront plus attirés par:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=VOLT%27HAIR+COIFFURE ">VOLT'HAIR COIFFURE</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=APAULINE%27HAIR GR+GRANDE+RUE+DUN-LE-PALESTEL">APAULINE'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=GRAMME+HAIR 12+RUE+GRAMME+PARIS+15">GRAMME HAIR</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Les informaticiens ne sont pas en reste avec:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=CYB+HAIR 9+RUE+MAJOR+MARTIN+LYON+1ER">CYB HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=CIB%27HAIR 9+RUE+CHARLES+LE+HIR+GUILERS">CIB'HAIR</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          De nombreuses possibilités pour intégrer son nom dans celui de son salon:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=AXELLE%27+HAIR LE+BOURG+CERISY-BELLE-ETOILE">AXELLE' HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=VAL%27HAIR%27IE 15+RTE+NATIONALE+SAINT-LAURENT-DE-CONDEL">VAL'HAIR'IE</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=JENNIF%27HAIR 7+RTE+DE+PONT+AUDEMER+CONDE-SUR-RISLE">JENNIF'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=TIFFANY+COIFFURE 55+RUE+BEAUMONT+NICE">TIFFANY COIFFURE</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=HAIR%27V PL+DES+MARELLES+CHANTEPIE">HAIR'V</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=CL%27+HAIR 8+PL+DU+XIV+JUILLET+CASTILLON-LA-BATAILLE">CL' HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=EMMAGINA%27TIF 33+RUE+DU+MARECHAL+FOCH+BRIONNE">EMMAGINA'TIF</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=BERENG%27HAIR AV+DU+GENERAL+DE+GAULLE+PORT-EN-BESSIN-HUPPAIN">BERENG'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=SEV+HAIR%27IN 12+RUE+DE+METZ+AMNEVILLE">SEV HAIR'IN</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=FRED%27HAIR%27IC 7+RUE+RENE+MASSON+BRACIEUX">FRED'HAIR'IC</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=ALB%27HAIR+COIFFURE+A+DOMICILE 4+RUE+DES+VIOLETTES+ORTAFFA">ALB'HAIR COIFFURE A DOMICILE</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=MYLEN+HAIR 7+PL+DE+L+EGLISE+JOB">MYLEN HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=J%27HAIR-AIME 115+RUE+PIERRE+BROSSOLETTE+ESQUERDES">J'HAIR-AIME</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=HAIR%27ONE 22+PL+DES+LICES+VANNES">HAIR'ONE</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Plusieurs salons ont un nom en rapport avec la région:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=CORS%27HAIR 67+RUE+VILLE+PEPIN+SAINT-MALO">CORS'HAIR</a> à Saint-Malo
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=FINIST%27HAIR CENTRE+COMMERCIAL+AR+ROUDOUR+GUERLESQUIN">FINIST'HAIR</a> en Bretagne
+            </li>
+          </ul>
+        </p>
+        <p>
+          Ceux-ci semblent pouvoir fournir des services... 'différents':
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=CED%27A+TIF 6+RUE+DU+CENTRE+CHANGE">CED'A TIF</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=ADULT%27HAIR 37+RUE+GABRIEL+PERI+GRENOBLE">ADULT'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=MISSION+HAIR 43+AV+FELIX+FAURE+LYON+3EME">MISSION HAIR</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Ces salons n'hésitent pas à chercher dans les références 'Pop':
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=ABRARACOUR+%27TIFS CHAUFFOUR+SAINT-YBARD">ABRARACOUR 'TIFS</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=TIFS+ET+TONDU 3+RUE+MERCIERE+SAINT-DIDIER-EN-VELAY">TIFS ET TONDU</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=SPEED%27HAIR+MAN 4+RUE+LAMARTINE+AMIENS">SPEED'HAIR MAN</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=PRINCE+DE+BEL+HAIR 28+RUE+DE+LA+PREVOTE+PERENCHIES">PRINCE DE BEL HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=PARTOUTA%27TIF 20+RUE+DES+BATAILLES+LONGUES+MIOS">PARTOUTA'TIF</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=GIJHAIR 12+RUE+DU+COUVENT+HAGUENAU">GIJHAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=FACELOOK 20+RUE+DU+GENERAL+BIGEARD+LE+TAMPON">FACELOOK</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Une séléction de noms très originaux:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=LA+CHAMBRE+A+HAIR 2+RUE+GAUTTE+SAINT-GILLES-CROIX-DE-VIE">LA CHAMBRE A HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=VENT%27CONTR%27HAIR 14+RUE+DU+HAUT+PREFAILLES+PREFAILLES">VENT'CONTR'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=TRALAL%27HAIR 39+RUE+ELISEE+CLAIS+FERQUES">TRALAL'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=SAGIT+HAIR RUE+DES+BINELLES+CHAGNY">SAGIT HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=REVOLVHAIR 29+RUE+DES+BLANCS+MANTEAUX+PARIS+4">REVOLVHAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=RECUP%27HAIR 32+RUE+FAIDHERBE+PARIS+11">RECUP'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=COUPE+DU+MONDE 17+RUE+GAMBETTA+VILLIERS-LE-BEL">COUPE DU MONDE</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=NUCL+HAIR CHE+DU+PRADAS+MAUZAC">NUCL HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=LA+POUDRI%27HAIR 3+CHE+DE+LA+POUDRIERE+SAINT-PAUL">LA POUDRI'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=PETARD+A+MECHE ">PETARD A MECHE</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=NEFERTI%27TIF 6+RUE+HUBERT+DE+LA+BROSSE+ORVAULT">NEFERTI'TIF</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=NAMAST%27HAIR 12+RUE+ST+JEAN+CIRY-SALSOGNE">NAMAST'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=LUCIF%27HAIR 2+CHE+DU+MARCHE+A+BLE+SAINT-MARDS-EN-OTHE">LUCIF'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=IMP%27HAIRIAL 270+CHE+DU+CAMP+DE+LAMBERT+AUBAGNE">IMP'HAIRIAL</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=F%27HAIR+FORGE-COIFFURE 70+PL+DES+PLEIADES+SAINT-PIERRE-EN-FAUCIGNY">F'HAIR FORGE-COIFFURE</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=DIV+HAIR+GENS 16+BD+DE+L+EUROPE+MULHOUSE">DIV HAIR GENS</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=CYMIL%27HAIR 2+RLE+PETIT+JEAN+GRANCEY-LE-CHATEAU-NEUVELLE">CYMIL'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=COLOCAT%27HAIR 1151+CHE+DU+PLAN+VISAN">COLOCAT'HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=CLAFOU%27TIFS 1+RUE+DES+QUARANTE+RETY">CLAFOU'TIFS</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=BUENO+S+HAIR 88+AV+VICTOR+HUGO+TULLE">BUENO S HAIR</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=SPACE+INVHEADER 34+RUE+VERRERIE+AIX-EN-PROVENCE">SPACE INVHEADER</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=BOUC+ET+MISS+HAIR 14+RUE+DE+L%27EGALITE+VILLENEUVE-SAINT-GERMAIN">BOUC ET MISS HAIR</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Certains salons semblent avoir tenté des jeux de mots, pas tout à fait heureux, ou avec le mauvais champs lexical:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=ABCD+TIF LE+MAILLARD+ANCY">ABCD TIF</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=ARTIST%27TIF 10+RUE+COLONEL+A+LEFEBVRE+CHAMPSECRET">ARTIST'TIF</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=SCARAMECHE 2+RUE+DE+LA+PROVIDENCE+LE+POULIGUEN">SCARAMECHE</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          En listant les mots utilisés par chaque établissement, trié par ordre d'apparition, et filtré sur le champs lexical de la coiffure a également permis de déterrer quelsques perles comme:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=NO+S+TRESSES 8+PL+FRANCISCO+FERRER+BEAUVOIS-EN-CAMBRESIS">NO S TRESSES</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=QUEER+CHEVELU 2+RUE+ETIENNE+MAREY+PARIS+20">QUEER CHEVELU</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=SAM+DECOIFF ">SAM DECOIFF</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=LA+COUPA+CABANA 15+BD+CARLONE+NICE">LA COUPA CABANA</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=NO+PEIGNE+NO+GAIN 1+RUE+DU+MAL+FOCH+MARCKOLSHEIM">NO PEIGNE NO GAIN</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Mais le plus drôle de tous reste:
+          <ul>
+            <li>
+              <a target="_blank" href="https://maps.google.com/?q=MD%27HAIR 24+RUE+DE+LA+REPUBLIQUE+SAINT-SATURNIN-LES-APT">MD'HAIR</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Pour finir, il semble que depuis le début de l'enregistrement des établissements dans la base de l'INSEE, aucun salon de coiffure ne se soit appelé:
+          <ul>
+            <li>
+              'Apéritif'
+            </li>
+            <li>
+              'Culin'hair'
+            </li>
+            <li>
+              'James Blonde'
+            </li>
+          </ul>
+        </p>
+      </div>
+    </section>
+    <section id="dmap">
+      <h2>
+        Stats par département
+      </h2>
+      <div id="deptmap"></div>
+      <p>
+        Pour l'ensemble du pays, cela donne  <b>8.8% </b> d'enseignes (en activité) avec des blagues.
+      </p>
+    </section>
+    <section id="about">
+      <h2>
+        Informations & Méthodologie
+      </h2>
+      <div class="about">
+        <h3>
+          Qu'est-ce donc?
+        </h3>
+        <p>
+          Ce site répertorie les établissements de coiffure (indiqués par le code  <a href="https://www.insee.fr/fr/metadonnees/nafr2/sousClasse/96.02A">Nomenclature d'Activité Française 96.02A</a>) dont les noms contiennent <strong>'coif'</strong>,  <strong>'mèche'</strong>,  <strong>'tif'</strong>, ou encore  <strong>'épi'</strong>, qui sont encore en activité au 1er août 2021, dans le but de détecter des jeux de mots ravissants. 
+        </p>
+        <p>
+          Une recherche supplémentaire de tous les mots utilisés par tous les salons, trié par nombre d'apparence, a permis également d'identifier quelques calembours bien choisis, notamment 'RACINE CARRÉE'. 
+        </p>
+        <h3>
+          D'où viennent les données?
+        </h3>
+        <p>
+          La source principale des données est l' <a href="https://www.insee.fr">INSEE (Institut national de la statistique et des études économiques)</a> qui gère également le répertoire système national d'identification et du répertoire des entreprises et de leurs établissements (SIRENE) comprenant les identifiants système d'identification du répertoire des entreprises (SIREN) des entreprises et SIRET de leurs différents établissements. 
+        </p>
+        <p>
+          La base complète de tous les établissements est <a href="https://www.data.gouv.fr/en/datasets/base-sirene-des-entreprises-et-de-leurs-etablissements-siren-siret/">disponible ici</a>. Les deux bases utilisées sont <a href="https://files.data.gouv.fr/insee-sirene/StockEtablissement_utf8.zip">StockEtablissement_utf8.zip</a> et <a href="https://files.data.gouv.fr/insee-sirene/StockUniteLegale_utf8.zip">StockUniteLegale_utf8.zip</a>. La première base contient l'intégralité des entreprises et établissements. Toutefois certains noms d'établissements n'y apparaissent pas et la deuxième base est nécessaire pour en trouver des informations plus récentes.
+        </p>
+        <p>
+          Malgré tout ceci, il semble que beaucoup de différences existent entre les bases INSEE et la "réalité" (telle que par exemple Google Maps permet d'explorer). Soit parce que les établissements ont fermé ou changé de nom depuis la date d'export de la base (1er août 2021), soit parce que certaines entreprises déclarées sont domiciliées dans une zone résidentielle, sans réel établissement (par exemple: les coiffeurs à domicile).
+        </p>
+        <h3>
+          Méthodologie
+        </h3>
+        <p>
+          Pour la sélection des noms à blague, parmis les 46000+ établissement de la base INSEE, une première passe consiste à sélectionner ceux dont le nom contiennent une de ces chaînes de caractère: <code>hair</code>, <code>tif</code>, <code>epi</code>, <code>mech</code>, ce qui réduit le compte à ~5700, puis de manuellement filtrer ceux qui contiennent effectivement un jeu de mots (et éliminer les nombreux "Hair Fashion" et autres "Hair Instituts, etc.), ce qui réduit la liste à ~4000. Ce traitement étant manuel, des oublis ont pu être faits sur les calembours les moins évidents... Pour cette étape, le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/blague.rb">blague.rb</a></code> facilite la revue des noms d'établissement.
+        </p>
+        <p>
+          D'autres mots relatifs à la coiffure sont parfois utilisés pour des calembours, par exemple <code>coiff</code>. Un <a href="http://www.coiff-emoi-tremblay.com/">salon de Seine-Saint-Denis</a> s'appelle par exemple "Coiff'Emoi". Toutefois, un très grand nombre de coiffeurs ont cette chaine de caractère dans leur nom (plus de 21000), dont la plupart ne contiennent aucun jeu de mot particulier, ce qui rendrait un traitement manuel particulièrement fastidieux. 
+        </p>
+        <p>
+          Dans les exemples de noms amusants, si plusieurs établissements ont le même nom, un d'entre eux sera pris au hasard lors de la génération du site.
+        </p>
+        <h3>
+          Reconstruire le jeu de données de ce site
+        </h3>
+        <p>
+          Une fois les bases téléchargées et décompressées, le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/sirene.rb">sirene.rb</a></code> permet de construire le fichier<code> coiffeurs.sqlite</code>. Ce script filtre les entrées du fichier <code>/tmp/StockEtablissement_utf8.csv</code> pour en extraire les établissements de coiffure, et d'autres informations concernant leur nom et adresse.Le problème avec cette approche est qu'il est possible que le nom principal ('enseigne1Etablissement' dans la base SIRENE) soit renseigné mais non utilisé par l'établissement. Ce nom est parfois renseigné dans 'denominationUsuelleEtablissement'. À cause de cela, certaines enseignes peuvent manquer dans la base, ou apparaître sous d'autres noms.
+        </p>
+        <p>
+          Pour obtenir les coordonnées latitude/longitude à partir de l'adresse, il faut ensuite utiliser un service de geocoding. J'utilise ici la librairie<a href="https://github.com/alexreisner/geocoder"> Ruby Geocoder</a> qui permet d'accéder à la fois aux API de  <a href="https://geo.api.gouv.fr/adresse">l'etalab</a> ainsi qu'aux API de <a href="https://developers.google.com/maps/documentation/geocoding/overview"> Google</a> qui, elles, nécessitent une clé API.
+        </p>
+        <p>
+          Le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/coords.rb">coords.rb</a></code> permet d'utiliser ces APIs. Lancer d'abord  <code>ruby coords.rb</code> pour mettre à jour le plus d'adresse avec l'API etalab, puis (après avoir mis à jour le fichier <code>.api_key  </code> avec votre clé API), lancer <code>ruby coords.rb google</code> pour obtenir le coordonnées des adresses qui n'ont pas pu être résolues avec l'etalab.
+        </p>
+        <p>
+          Pour des soucis de performance, la totalité de la base de données est ensuite exportée au format geojson pour être utilisée par les cartes Leaflets ci-dessus. Le script <code><a href="https://github.com/tifhair/tifhair-tools/blob/main/tools/statify.rb">statify.rb</a></code> réalise les transformations nécessaires pour construire l'intégralité du site <a href="https://tif.hair">tif.hair</a> dans un répertoire de destination en lançant <code> ruby statify.rb src <destination></code>
+        </p>
+        <h3>
+          Licences
+        </h3>
+        <ul>
+          <li>
+            <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence">Licence ouverte etalab</a>
+          </li>
+          <li>
+            <a href="https://github.com/alexreisner/geocoder/blob/master/LICENSE">Ruby Geocoder MIT License</a>
+          </li>
+          <li>
+            <a href="https://www.insee.fr/fr/information/2381863">Conditions utilisation données INSEE</a>
+          </li>
+          <li>
+            <a href="https://github.com/Leaflet/Leaflet/blob/master/LICENSE">Leaflet License</a>
+          </li>
+          <li>
+            <a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/MIT-LICENCE.txt">MarkerCluster MIT License</a>
+          </li>
+          <li>
+            <a href="https://github.com/jgthms/minireset.css/blob/master/LICENSE">MiniReset MIT License</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section id="references">
+      <h2>
+        Références
+      </h2>
+      <div class="references">
+        <p>
+          Le sujet a déjà été traité dans divers endroits:
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/lolcoiffeur/">Instagram 'lolcoiffeur'</a>
+            </li>
+            <li>
+              <a href="https://lolcoiffeurs.tumblr.com/">Tumblr 'LOLcoiffeur'</a>
+            </li>
+            <li>
+              <a href="https://www.amazon.fr/Tir%C3%A9-par-cheveux-enseignes-d%C3%A9coiffent/dp/2842306198">Tiré par les cheveux: Des enseignes qui décoiffent Broché – Illustré, 17 mai 2018</a>
+            </li>
+            <li>
+              <a href="https://www.lemonde.fr/les-decodeurs/article/2016/11/29/hair-et-tif-des-noms-de-salons-qui-defrisent_5040180_4355770.html">« Hair » et « tif », des noms de salons de coiffure qui défrisent, LeMonde Publié le 29 novembre 2016 à 12h34</a>
+            </li>
+          </ul>
+        </p>
+        <p>
+          Faites également attention aux fakes!
+          <ul>
+            <li>
+              <a href="https://www.francebleu.fr/infos/insolite/non-il-n-y-pas-de-salon-de-coiffure-adolf-hitl-hair-strasbourg-1460971142">Non, il n'y a pas de salon de coiffure "Adolf Hitl'hair" à Strasbourg, FranceBleu (18 avril 2016)</a>
+            </li>
+          </ul>
+        </p>
+      </div>
+    </section>
     <script src="/js/coiffeurs.js"></script>
   </body>
 </html>
