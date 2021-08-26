@@ -135,8 +135,6 @@ aside{
     h1 {
         font-size: 2.5rem;
     }
-    #mapid {
-    }
     section#globalmap {
         display: grid;
         grid-auto-columns: 1fr;
